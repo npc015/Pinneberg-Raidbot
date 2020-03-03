@@ -1,0 +1,9 @@
+# Ignore everything in this directory
+*
+# Except this file and the example config
+!form.css
+!updateRaid.php
+!.gitignore
+!vorlagen/
+!vorlagen/alte_anleitung.pdf
+!vorlagen/aktuelle_powerpoint.pptx
