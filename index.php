@@ -16,14 +16,14 @@ $webhook = false;
 foreach ($update as $raid) {
 
     if (isset($raid['type']) && $raid['type'] == 'raid') {
-    
+
         $webhook = true;
-        break;    
+        break;
     }
 }
 
 if ($webhook === false) {
-    
+
     // DDOS protection
     include_once(CORE_BOT_PATH . '/ddos.php');
 }
@@ -38,7 +38,7 @@ include_once(CORE_BOT_PATH . '/db.php');
 include_once(CORE_BOT_PATH . '/cleanup_run.php');
 
 if ($webhook === true) {
-    
+
     // Create raid(s) and exit.
     include_once(ROOT_PATH . '/commands/raid_from_webhook.php');
     $dbh = null;
@@ -49,8 +49,8 @@ if ($webhook === true) {
 update_user($update);
 
 if(isset($update['message']['new_chat_member']) AND $update['message']['chat']['id'] == '-1001294336545')
-{  
- sendMessage(-1001294336545, "Willkommen <b>".$update['message']['new_chat_member']['first_name']."</b> in der Pinneberger Talkgruppe. ".CR." ".CR."Unter https://www.raidspinneberg.de/dokumentation/infos.pdf findest du alle wichtigen Informationen (Anleitungen, Links, Regeln und Datenschutz). Bitte verwende dieses Dokument als erste Anlaufstelle.
+{
+ sendMessage(-1001294336545, "Willkommen <b>".$update['message']['new_chat_member']['first_name']."</b> in der Pinneberger Talkgruppe. ".CR." ".CR."Unter https://raidbot.piraidgruppe.de/dokumentation/infos.pdf findest du alle wichtigen Informationen (Anleitungen, Links, Regeln und Datenschutz). Bitte verwende dieses Dokument als erste Anlaufstelle.
 
 Ansonsten stehen dir bei Fragen, Anregungen und Kritik gerne @HenningW2019 als Admin und @Serafinius als Moderator zur Verfügung.
 
